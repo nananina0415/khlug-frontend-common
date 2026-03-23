@@ -21,8 +21,7 @@
   },
   "scripts": {
     "build": "vite build",
-    "lint": "eslint .",
-    "prepare": "vite build"
+    "lint": "eslint ."
   },
   "peerDependencies": {
     "@chakra-ui/react": "^3",
