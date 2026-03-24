@@ -1,6 +1,6 @@
 import { jsx as r, jsxs as c, Fragment as C } from "react/jsx-runtime";
-import { Dialog as d, Portal as w, Button as _, Alert as g, Flex as I, IconButton as h, defineRecipe as N, defineConfig as k, createSystem as D, defaultConfig as x } from "@chakra-ui/react";
-import { GraduationCap as L, Coffee as A, Hospital as f, PieChart as S, Plane as R, FlaskConical as E, Music as T, Pill as Y, Sprout as B, Scale as O, Brush as U, Book as F, VenetianMask as G, Building2 as H, Dumbbell as $, Palette as j, Globe as z, Globe2 as q, Dna as K, Microscope as V, Monitor as P, Satellite as W, Cog as Q, CircleHelp as X, ChevronLeft as Z, ChevronRight as J, Menu as ee } from "lucide-react";
+import { Dialog as d, Portal as I, Button as _, Alert as g, Flex as w, IconButton as h, defineRecipe as N, defineConfig as k, createSystem as D, defaultConfig as x } from "@chakra-ui/react";
+import { GraduationCap as L, Coffee as A, Hospital as f, PieChart as S, Plane as R, FlaskConical as E, Music as T, Pill as Y, Sprout as B, Scale as O, Brush as U, Book as F, VenetianMask as G, Building2 as H, Dumbbell as $, Palette as j, Globe as V, Globe2 as z, Dna as q, Microscope as K, Monitor as P, Satellite as W, Cog as Q, CircleHelp as X, ChevronLeft as Z, ChevronRight as J, Menu as ee } from "lucide-react";
 import { useState as ne } from "react";
 import { useQuery as te } from "@tanstack/react-query";
 import re, { isAxiosError as ae } from "axios";
@@ -13,7 +13,7 @@ function Je({ isOpen: e, onRequestClose: n, children: t }) {
       onOpenChange: (s) => {
         !s.open && n && n();
       },
-      children: /* @__PURE__ */ c(w, { children: [
+      children: /* @__PURE__ */ c(I, { children: [
         /* @__PURE__ */ r(d.Backdrop, {}),
         /* @__PURE__ */ r(d.Positioner, { children: /* @__PURE__ */ r(
           d.Content,
@@ -46,10 +46,10 @@ const oe = {
   공과대학: Q,
   전자정보대학: W,
   소프트웨어융합대학: P,
-  응용과학대학: V,
-  생명과학대학: K,
-  국제대학: q,
-  외국어대학: z,
+  응용과학대학: K,
+  생명과학대학: q,
+  국제대학: z,
+  외국어대학: V,
   "예술·디자인대학": j,
   체육대학: $,
   간호과학대학: f,
@@ -144,7 +144,7 @@ function on({
   onPageChange: s
 }) {
   const l = Math.ceil(t / n), o = de(e, n, t);
-  return /* @__PURE__ */ c(I, { justify: "center", align: "center", gap: 2, children: [
+  return /* @__PURE__ */ c(w, { justify: "center", align: "center", gap: 2, children: [
     /* @__PURE__ */ r(
       h,
       {
@@ -189,7 +189,7 @@ function fe() {
 function sn({ className: e }) {
   return /* @__PURE__ */ r("div", { className: M("center-ring-loading-indicator__wrapper", e), children: /* @__PURE__ */ r(fe, {}) });
 }
-const me = void 0, ge = re.create({
+const me = import.meta.env.VITE_API_V2_BASE_URL, ge = re.create({
   baseURL: me,
   headers: {
     "Content-Type": "application/json"
@@ -212,14 +212,14 @@ const me = void 0, ge = re.create({
     isLoading: e === "pending",
     isError: e === "error"
   };
-}, y = [], _e = "_navigationBar_74agw_3", Ne = "_navContainer_74agw_23", Me = "_logo_74agw_41", ye = "_desktopMenu_74agw_51", Ce = "_navItem_74agw_63", we = "_navLink_74agw_73", Ie = "_active_74agw_99", ke = "_subNav_74agw_107", De = "_mobileActions_74agw_453", xe = "_mobileMenu_74agw_467", Le = "_mobileNavItem_74agw_495", Ae = "_mobileNavLink_74agw_511", Se = "_mobileSubNav_74agw_537", i = {
+}, y = [], _e = "_navigationBar_74agw_3", Ne = "_navContainer_74agw_23", Me = "_logo_74agw_41", ye = "_desktopMenu_74agw_51", Ce = "_navItem_74agw_63", Ie = "_navLink_74agw_73", we = "_active_74agw_99", ke = "_subNav_74agw_107", De = "_mobileActions_74agw_453", xe = "_mobileMenu_74agw_467", Le = "_mobileNavItem_74agw_495", Ae = "_mobileNavLink_74agw_511", Se = "_mobileSubNav_74agw_537", i = {
   navigationBar: _e,
   navContainer: Ne,
   logo: Me,
   desktopMenu: ye,
   navItem: Ce,
-  navLink: we,
-  active: Ie,
+  navLink: Ie,
+  active: we,
   subNav: ke,
   mobileActions: De,
   mobileMenu: xe,
@@ -453,7 +453,7 @@ const je = N({
   defaultVariants: {
     variant: "primary"
   }
-}), ze = N({
+}), Ve = N({
   base: {
     color: "brand.500",
     textDecoration: "underline",
@@ -461,7 +461,7 @@ const je = N({
       color: "brand.600"
     }
   }
-}), qe = k({
+}), ze = k({
   globalCss: {
     body: {
       bg: "#fcfcfc",
@@ -489,10 +489,10 @@ const je = N({
     },
     recipes: {
       button: je,
-      link: ze
+      link: Ve
     }
   }
-}), hn = D(x, qe);
+}), hn = D(x, ze);
 export {
   Je as BaseModal,
   en as Button,
