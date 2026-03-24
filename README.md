@@ -73,7 +73,11 @@ yarn build
 
 ## 릴리즈
 
-변경사항을 배포할 때는 `dist/`를 빌드하고 태그를 붙여 푸시합니다.
+태그는 `dist/`가 변경될 때만 올립니다. 문서나 소스만 변경된 경우 태그 없이 커밋만 합니다.
+
+추후 메인 브랜치에 태깅 시 자동 빌드 및 배포가 동작할 수 있기 때문입니다.
+
+따라서 변경사항을 배포할 때에만 빌드하고 태그를 붙여 푸시합니다.
 
 ```sh
 yarn build
@@ -88,3 +92,29 @@ git push && git push origin vX.Y.Z
 ```json
 "@khlug/common-module": "github:nananina0415/khlug-frontend-common#vX.Y.Z"
 ```
+
+## GitHub Actions 자동화 (향후 적용 예정)
+
+현재는 수동으로 릴리즈하지만, 아래 워크플로를 GitHub Actions로 자동화할 수 있습니다.
+
+### 릴리즈 워크플로
+
+`master` 브랜치에 push할 때 커밋 메시지가 `release: vX.Y.Z` 형식이면 자동으로 빌드 및 태그를 생성합니다.
+
+**트리거 조건**: 최신 커밋 메시지가 `release: v0.1.1` 형식인 경우
+
+**워크플로 순서**:
+1. 커밋 메시지에서 버전 추출 (`v0.1.1`)
+2. `yarn install` — 의존성 설치
+3. `yarn build` — `dist/` 재생성
+4. `dist/` 변경사항을 같은 커밋에 포함하여 `master`에 push
+5. `vX.Y.Z` 태그 생성 및 push
+
+**트리거 외 push**: 아무 작업도 하지 않음 (빌드/태그 없음)
+
+### PR 검사 워크플로
+
+| 검사 | 작업 |
+|---|---|
+| 타입 검사 | `tsc --noEmit` |
+| 린트 | `yarn lint` |

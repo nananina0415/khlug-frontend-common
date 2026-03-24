@@ -55,13 +55,22 @@ src/
 
 ## 개발 가이드라인
 
+- 개발은 반드시 메인 브랜치가 아닌 다른 브랜치에서 합니다.
 - 컴포넌트 추가 시 `src/index.ts`에 named export 추가
 - 외부 패키지 추가 시 `peerDependencies`와 `vite.config.ts`의 `external` 배열 모두 업데이트
 - CSS는 `index.css` 또는 컴포넌트 폴더 내 `.css` 파일 사용
 
 ## 릴리즈 절차
 
+태그는 `dist/`가 변경될 때만 올립니다. 문서나 소스만 변경된 경우 태그 없이 커밋만 합니다.
+
+### 현재 (수동)
+
 1. `yarn build` — `dist/` 재생성
 2. `git add -A && git commit -m "release: vX.Y.Z"`
 3. `git tag vX.Y.Z && git push && git push origin vX.Y.Z`
 4. 사용하는 프로젝트의 `package.json`에서 태그 번호 변경 후 `yarn install`
+
+### 향후 (GitHub Actions 자동화)
+
+커밋 메시지를 `release: vX.Y.Z` 형식으로 작성하면 빌드, dist 커밋, 태그 생성이 자동으로 처리됩니다. 자세한 내용은 README 참고.
