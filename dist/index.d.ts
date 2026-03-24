@@ -1,9 +1,10 @@
+import { AxiosInstance } from 'axios';
 import { Button as Button_2 } from '@chakra-ui/react';
 import { cn } from './util/cn';
 import { JSX as JSX_2 } from 'react/jsx-runtime';
 import { LucideProps } from 'lucide-react';
 
-export declare const apiClient: any;
+export declare const apiClient: AxiosInstance;
 
 export declare function BaseModal({ isOpen, onRequestClose, children }: Props): JSX_2.Element;
 
