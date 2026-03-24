@@ -58,3 +58,10 @@ src/
 - 컴포넌트 추가 시 `src/index.ts`에 named export 추가
 - 외부 패키지 추가 시 `peerDependencies`와 `vite.config.ts`의 `external` 배열 모두 업데이트
 - CSS는 `index.css` 또는 컴포넌트 폴더 내 `.css` 파일 사용
+
+## 릴리즈 절차
+
+1. `yarn build` — `dist/` 재생성
+2. `git add -A && git commit -m "release: vX.Y.Z"`
+3. `git tag vX.Y.Z && git push && git push origin vX.Y.Z`
+4. 사용하는 프로젝트의 `package.json`에서 태그 번호 변경 후 `yarn install`

@@ -70,3 +70,21 @@ yarn build
 ```
 
 `dist/`에 ESM(`index.js`), CJS(`index.cjs`), 타입 선언(`index.d.ts`), 스타일(`style.css`)이 생성됩니다.
+
+## 릴리즈
+
+변경사항을 배포할 때는 `dist/`를 빌드하고 태그를 붙여 푸시합니다.
+
+```sh
+yarn build
+git add -A
+git commit -m "release: vX.Y.Z"
+git tag vX.Y.Z
+git push && git push origin vX.Y.Z
+```
+
+이후 사용하는 프로젝트의 `package.json`에서 태그 번호를 올리면 됩니다.
+
+```json
+"@khlug/common-module": "github:nananina0415/khlug-frontend-common#vX.Y.Z"
+```
