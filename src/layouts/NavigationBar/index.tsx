@@ -6,11 +6,14 @@ import { DesktopNav } from "./DesktopNav";
 import { MobileNav } from "./MobileNav";
 import styles from "./style.module.css";
 
+const DEFAULT_LOGO_URL = "https://cdn.khlug.org/images/khlug-long-logo.png";
+
 type Props = {
   notificationSlot?: React.ReactNode;
+  logoUrl?: string;
 };
 
-export default function NavigationBar({ notificationSlot }: Props) {
+export default function NavigationBar({ notificationSlot, logoUrl = DEFAULT_LOGO_URL }: Props) {
   const [menuVisible, setMenuVisible] = useState(false);
   const { isManager } = useIsManager();
 
@@ -23,7 +26,7 @@ export default function NavigationBar({ notificationSlot }: Props) {
       <div className={styles.navContainer}>
         <a href="https://app.khlug.org">
           <img
-            src="https://cdn.khlug.org/images/khlug-long-logo.png"
+            src={logoUrl}
             alt="KHLUG Logo"
             className={styles.logo}
           />

@@ -56,7 +56,7 @@ declare type GetCurrentUserResponseDto = {
 
 export declare function KhlugIcon(): JSX_2.Element;
 
-export declare function MainLayout({ children }: Props_8): JSX_2.Element;
+export declare function MainLayout({ children, logoUrl }: Props_8): JSX_2.Element;
 
 export declare type MenuItem = {
     label: string;
@@ -65,7 +65,7 @@ export declare type MenuItem = {
     requiresManager?: boolean;
 };
 
-export declare function NavigationBar({ notificationSlot }: Props_9): JSX_2.Element;
+export declare function NavigationBar({ notificationSlot, logoUrl }: Props_9): JSX_2.Element;
 
 export declare function PageNavigator({ currentPage, countPerPage, totalCount, onPageChange, }: Props_6): JSX_2.Element;
 
@@ -112,10 +112,12 @@ declare type Props_7 = {
 
 declare type Props_8 = {
     children: React.ReactNode;
+    logoUrl?: string;
 };
 
 declare type Props_9 = {
     notificationSlot?: React.ReactNode;
+    logoUrl?: string;
 };
 
 export declare type PropsOf<T extends React.ComponentType<any>> = T extends React.ComponentType<infer P> ? P : never;
