@@ -149,7 +149,6 @@ export declare const system: any;
 export declare const useCurrentUser: () => any;
 
 export declare const useIsManager: () => {
-    isLoggedIn: boolean;
     isManager: any;
     isLoading: boolean;
     isError: boolean;

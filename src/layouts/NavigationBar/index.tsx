@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { IconButton } from "@chakra-ui/react";
 import { Menu } from "lucide-react";
+import { useCurrentUser } from "../../hooks/user/useCurrentUser";
 import { useIsManager } from "../../hooks/user/useIsManager";
 import { DesktopNav } from "./DesktopNav";
 import { MobileNav } from "./MobileNav";
@@ -24,7 +25,9 @@ export default function NavigationBar({
   menuItems = [],
 }: Props) {
   const [menuVisible, setMenuVisible] = useState(false);
-  const { isLoggedIn, isManager } = useIsManager();
+  const { data: currentUser } = useCurrentUser();
+  const isLoggedIn = !!currentUser?.id;
+  const { isManager } = useIsManager();
 
   const toggleMenu = () => {
     setMenuVisible(!menuVisible);
