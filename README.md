@@ -48,7 +48,7 @@ import { system } from "@khlug/common-module";
 | `CenterRingLoadingIndicator` | 화면 중앙 정렬 로딩 인디케이터 |
 | `MainLayout` | 네비게이션 바 포함 메인 레이아웃 |
 | `NavigationBar` | 상단 네비게이션 바 |
-| `MenuItem`, `SubMenuItem` | NavigationBar 메뉴 데이터 타입 |
+| `MenuItem`, `SubMenuItem` | NavigationBar 메뉴 데이터 타입 (아래 메뉴 가시성 규칙 참고) |
 | `SimpleLogoLayout` | 로고만 있는 단순 레이아웃 |
 | `useCurrentUser` | 현재 로그인 유저 조회 훅 |
 | `useIsManager` | 운영진 여부 확인 훅 |
@@ -62,6 +62,32 @@ import { system } from "@khlug/common-module";
 | `Validator` | 입력값 검증 유틸리티 |
 | `PropsOf` | 컴포넌트 props 타입 추출 유틸리티 타입 |
 | `system` | Chakra UI 테마 설정 |
+
+## NavigationBar 메뉴 가시성 규칙
+
+`MenuItem`의 플래그에 따라 사용자 유형별로 표시 여부가 결정됩니다.
+
+| 플래그 | 게스트 | 멤버 | 매니저 |
+|---|:---:|:---:|:---:|
+| 없음 (기본) | O | O | O |
+| `requiresMember: true` | ✗ | O | O |
+| `requiresManager: true` | ✗ | ✗ | O |
+| `forGuest: true` | O | ✗ | ✗ |
+
+`MainLayout`과 `NavigationBar`는 `menuItems` prop으로 항목을 받습니다. 각 프로젝트에서 메뉴 항목을 정의해 전달하세요.
+
+```ts
+import { MainLayout, type MenuItem } from "@khlug/common-module";
+
+const menuItems: MenuItem[] = [
+  { label: "홈", href: "/", subItems: [] },
+  { label: "등록", href: "/submit", subItems: [], requiresMember: true },
+  { label: "관리", href: "/manage", subItems: [], requiresManager: true },
+  { label: "로그인", href: "/login", subItems: [], forGuest: true },
+];
+
+<MainLayout menuItems={menuItems}>...</MainLayout>
+```
 
 ## Build
 

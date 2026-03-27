@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { IconButton } from "@chakra-ui/react";
 import { Menu } from "lucide-react";
+import { useCurrentUser } from "../../hooks/user/useCurrentUser";
 import { useIsManager } from "../../hooks/user/useIsManager";
 import { DesktopNav } from "./DesktopNav";
 import { MobileNav } from "./MobileNav";
+import { type MenuItem } from "./menuData";
 import styles from "./style.module.css";
 
 const DEFAULT_LOGO_URL = "https://cdn.khlug.org/images/khlug-long-logo.png";
@@ -13,10 +15,18 @@ type Props = {
   notificationSlot?: React.ReactNode;
   logoUrl?: string;
   logoHref?: string;
+  menuItems?: MenuItem[];
 };
 
-export default function NavigationBar({ notificationSlot, logoUrl = DEFAULT_LOGO_URL, logoHref = DEFAULT_LOGO_HREF }: Props) {
+export default function NavigationBar({
+  notificationSlot,
+  logoUrl = DEFAULT_LOGO_URL,
+  logoHref = DEFAULT_LOGO_HREF,
+  menuItems = [],
+}: Props) {
   const [menuVisible, setMenuVisible] = useState(false);
+  const { data: currentUser } = useCurrentUser();
+  const isLoggedIn = !!currentUser?.id;
   const { isManager } = useIsManager();
 
   const toggleMenu = () => {
@@ -35,7 +45,7 @@ export default function NavigationBar({ notificationSlot, logoUrl = DEFAULT_LOGO
         </a>
 
         <div className={styles.desktopMenu}>
-          <DesktopNav isManager={isManager} />
+          <DesktopNav menuItems={menuItems} isLoggedIn={isLoggedIn} isManager={isManager} />
           {notificationSlot}
         </div>
 
@@ -52,7 +62,9 @@ export default function NavigationBar({ notificationSlot, logoUrl = DEFAULT_LOGO
         </div>
       </div>
 
-      {menuVisible && <MobileNav isManager={isManager} />}
+      {menuVisible && (
+        <MobileNav menuItems={menuItems} isLoggedIn={isLoggedIn} isManager={isManager} />
+      )}
     </nav>
   );
 }
