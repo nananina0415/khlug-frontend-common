@@ -54,6 +54,20 @@ declare type GetCurrentUserResponseDto = {
     updatedAt: string;
 };
 
+declare type GetGroupMembersResponseDto = {
+    memberId: number;
+    name: string;
+}[];
+
+declare type GetMyGroupsResponseDto = {
+    groupId: string;
+    name: string;
+}[];
+
+export declare const GroupMemberApi: {
+    getGroupMembers: (groupId: string) => Promise<GetGroupMembersResponseDto>;
+};
+
 export declare function KhlugIcon(): JSX_2.Element;
 
 export declare function MainLayout({ children, logoUrl, logoHref, menuItems }: Props_8): JSX_2.Element;
@@ -156,6 +170,7 @@ export declare const useIsManager: () => {
 
 export declare const UserPublicApi: {
     getCurrentUser: () => Promise<GetCurrentUserResponseDto>;
+    getMyGroups: (isActive?: boolean) => Promise<GetMyGroupsResponseDto>;
 };
 
 declare type ValidateResult = {
