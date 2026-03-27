@@ -56,16 +56,18 @@ declare type GetCurrentUserResponseDto = {
 
 export declare function KhlugIcon(): JSX_2.Element;
 
-export declare function MainLayout({ children, logoUrl, logoHref }: Props_8): JSX_2.Element;
+export declare function MainLayout({ children, logoUrl, logoHref, menuItems }: Props_8): JSX_2.Element;
 
 export declare type MenuItem = {
     label: string;
     href: string;
     subItems: SubMenuItem[];
+    requiresMember?: boolean;
     requiresManager?: boolean;
+    forGuest?: boolean;
 };
 
-export declare function NavigationBar({ notificationSlot, logoUrl, logoHref }: Props_9): JSX_2.Element;
+export declare function NavigationBar({ notificationSlot, logoUrl, logoHref, menuItems, }: Props_9): JSX_2.Element;
 
 export declare function PageNavigator({ currentPage, countPerPage, totalCount, onPageChange, }: Props_6): JSX_2.Element;
 
@@ -114,12 +116,14 @@ declare type Props_8 = {
     children: React.ReactNode;
     logoUrl?: string;
     logoHref?: string;
+    menuItems?: MenuItem[];
 };
 
 declare type Props_9 = {
     notificationSlot?: React.ReactNode;
     logoUrl?: string;
     logoHref?: string;
+    menuItems?: MenuItem[];
 };
 
 export declare type PropsOf<T extends React.ComponentType<any>> = T extends React.ComponentType<infer P> ? P : never;
@@ -145,6 +149,7 @@ export declare const system: any;
 export declare const useCurrentUser: () => any;
 
 export declare const useIsManager: () => {
+    isLoggedIn: boolean;
     isManager: any;
     isLoading: boolean;
     isError: boolean;

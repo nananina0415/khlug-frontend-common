@@ -60,6 +60,21 @@ src/
 - 외부 패키지 추가 시 `peerDependencies`와 `vite.config.ts`의 `external` 배열 모두 업데이트
 - CSS는 `index.css` 또는 컴포넌트 폴더 내 `.css` 파일 사용
 
+## NavigationBar 메뉴 가시성 규칙
+
+`MenuItem` 플래그에 따라 사용자 유형별 표시 여부가 결정됩니다.
+
+| 플래그 | 게스트 | 멤버 | 매니저 |
+|---|:---:|:---:|:---:|
+| 없음 (기본) | O | O | O |
+| `requiresMember: true` | ✗ | O | O |
+| `requiresManager: true` | ✗ | ✗ | O |
+| `forGuest: true` | O | ✗ | ✗ |
+
+- `requiresMember`는 매니저에게도 표시됩니다 (매니저는 로그인된 멤버이기도 하므로).
+- 각 프로젝트가 `menuItems` prop으로 항목을 정의해 `MainLayout` 또는 `NavigationBar`에 전달합니다.
+- `menuData.ts`는 타입 정의용 파일이며, 항목은 각 프로젝트에서 직접 정의합니다.
+
 ## 릴리즈 절차
 
 태그는 `dist/`가 변경될 때만 올립니다. 문서나 소스만 변경된 경우 태그 없이 커밋만 합니다.

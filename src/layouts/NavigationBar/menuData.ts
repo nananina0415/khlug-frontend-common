@@ -2,7 +2,9 @@ export type MenuItem = {
   label: string;
   href: string;
   subItems: SubMenuItem[];
+  requiresMember?: boolean;
   requiresManager?: boolean;
+  forGuest?: boolean;
 };
 
 export type SubMenuItem = {
