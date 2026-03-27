@@ -23,7 +23,8 @@ export { useCurrentUser } from "./hooks/user/useCurrentUser";
 export { useIsManager } from "./hooks/user/useIsManager";
 
 // API
-export { UserPublicApi } from "./api/public/user";
+export { UserPublicApi } from "./api/member/user";
+export { GroupMemberApi } from "./api/member/group";
 export { default as apiClient } from "./api/client/v2";
 
 // Utils

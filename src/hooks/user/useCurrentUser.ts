@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { UserPublicApi } from "../../api/public/user";
+import { UserPublicApi } from "../../api/member/user";
 
 export const useCurrentUser = () => {
   return useQuery({
