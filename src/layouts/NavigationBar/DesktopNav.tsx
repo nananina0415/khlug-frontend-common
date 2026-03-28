@@ -8,15 +8,17 @@ type Props = {
   current?: string;
 };
 
-function SubNavItem({ item }: { item: SubMenuItem }) {
+function SubNavItem({ item, isCurrent }: { item: SubMenuItem; isCurrent: boolean }) {
   if (item.isDivider) {
     return <hr />;
   }
-  return <a href={item.href}>{item.label}</a>;
+  return <a href={item.href} className={isCurrent ? styles.active : ""}>{item.label}</a>;
 }
 
 function NavItem({ item, current }: { item: MenuItem; current?: string }) {
-  const isActive = current !== undefined ? item.href === current : false;
+  const isActive = current !== undefined
+    ? item.subItems.some((sub) => sub.href === current) || item.href === current
+    : false;
 
   return (
     <div className={styles.navItem}>
@@ -28,7 +30,7 @@ function NavItem({ item, current }: { item: MenuItem; current?: string }) {
       </a>
       <div className={styles.subNav}>
         {item.subItems.map((subItem, index) => (
-          <SubNavItem key={subItem.href || index} item={subItem} />
+          <SubNavItem key={subItem.href || index} item={subItem} isCurrent={subItem.href === current} />
         ))}
       </div>
     </div>

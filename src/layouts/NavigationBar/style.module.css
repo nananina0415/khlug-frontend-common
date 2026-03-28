@@ -48,7 +48,6 @@
 }
 
 .navLink.active {
-  color: var(--main-color);
   border-bottom: 2px solid var(--main-color);
 }
 
@@ -90,6 +89,10 @@
 .subNav a:hover {
   background-color: var(--main-color);
   color: white;
+}
+
+.subNav a.active {
+  color: #5dc4ff;
 }
 
 .subNav a:first-child {
@@ -264,7 +267,11 @@
 }
 
 .mobileNavLink.active {
-  border-bottom: 2px solid var(--main-color);
+  color: #5dc4ff;
+}
+
+.mobileSubNav a.active {
+  color: #5dc4ff;
 }
 
 .mobileSubNav a {

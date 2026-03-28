@@ -1,21 +1,21 @@
-import { jsx as t, jsxs as c, Fragment as I } from "react/jsx-runtime";
-import { Dialog as d, Portal as x, Button as y, Alert as b, Flex as A, IconButton as v, defineRecipe as C, defineConfig as L, createSystem as S, defaultConfig as R } from "@chakra-ui/react";
-import { GraduationCap as E, Coffee as T, Hospital as f, PieChart as Y, Plane as G, FlaskConical as B, Music as O, Pill as U, Sprout as F, Scale as $, Brush as H, Book as j, VenetianMask as z, Building2 as q, Dumbbell as K, Palette as V, Globe as P, Globe2 as W, Dna as Q, Microscope as X, Monitor as Z, Satellite as J, Cog as ee, CircleHelp as re, ChevronLeft as ne, ChevronRight as te, Menu as ae } from "lucide-react";
-import { useState as se } from "react";
-import { useQuery as oe } from "@tanstack/react-query";
+import { jsx as r, jsxs as c, Fragment as I } from "react/jsx-runtime";
+import { Dialog as d, Portal as L, Button as M, Alert as g, Flex as A, IconButton as h, defineRecipe as C, defineConfig as w, createSystem as S, defaultConfig as R } from "@chakra-ui/react";
+import { GraduationCap as E, Coffee as T, Hospital as f, PieChart as Y, Plane as G, FlaskConical as B, Music as O, Pill as U, Sprout as F, Scale as H, Brush as j, Book as $, VenetianMask as z, Building2 as q, Dumbbell as K, Palette as V, Globe as P, Globe2 as W, Dna as Q, Microscope as X, Monitor as Z, Satellite as J, Cog as ee, CircleHelp as te, ChevronLeft as ne, ChevronRight as re, Menu as ae } from "lucide-react";
+import { useState as oe } from "react";
+import { useQuery as se } from "@tanstack/react-query";
 import ie, { isAxiosError as le } from "axios";
-import h from "dayjs";
-function nr({ isOpen: e, onRequestClose: r, children: a }) {
-  return /* @__PURE__ */ t(
+import p from "dayjs";
+function nt({ isOpen: e, onRequestClose: t, children: a }) {
+  return /* @__PURE__ */ r(
     d.Root,
     {
       open: e,
       onOpenChange: (o) => {
-        !o.open && r && r();
+        !o.open && t && t();
       },
-      children: /* @__PURE__ */ c(x, { children: [
-        /* @__PURE__ */ t(d.Backdrop, {}),
-        /* @__PURE__ */ t(d.Positioner, { children: /* @__PURE__ */ t(
+      children: /* @__PURE__ */ c(L, { children: [
+        /* @__PURE__ */ r(d.Backdrop, {}),
+        /* @__PURE__ */ r(d.Positioner, { children: /* @__PURE__ */ r(
           d.Content,
           {
             p: "28px",
@@ -29,17 +29,17 @@ function nr({ isOpen: e, onRequestClose: r, children: a }) {
     }
   );
 }
-function tr({
+function rt({
   variant: e = "primary",
-  disabled: r,
+  disabled: t,
   ...a
 }) {
-  return /* @__PURE__ */ t(y, { variant: e, disabled: r, ...a });
+  return /* @__PURE__ */ r(M, { variant: e, disabled: t, ...a });
 }
-function ar({ type: e = "info", children: r }) {
-  return /* @__PURE__ */ c(b.Root, { status: e, borderRadius: "md", alignItems: "center", children: [
-    /* @__PURE__ */ t(b.Indicator, {}),
-    /* @__PURE__ */ t(b.Description, { flex: 1, children: r })
+function at({ type: e = "info", children: t }) {
+  return /* @__PURE__ */ c(g.Root, { status: e, borderRadius: "md", alignItems: "center", children: [
+    /* @__PURE__ */ r(g.Indicator, {}),
+    /* @__PURE__ */ r(g.Description, { flex: 1, children: t })
   ] });
 }
 const ce = {
@@ -55,9 +55,9 @@ const ce = {
   간호과학대학: f,
   경영대학: q,
   무용학부: z,
-  문과대학: j,
-  미술대학: H,
-  법과대학: $,
+  문과대학: $,
+  미술대학: j,
+  법과대학: H,
   생활과학대학: F,
   약학대학: U,
   음악대학: O,
@@ -69,20 +69,20 @@ const ce = {
   한의과대학: f,
   호텔관광대학: T,
   대학원: E
-}, ue = re;
-function sr({ college: e, ...r }) {
+}, ue = te;
+function ot({ college: e, ...t }) {
   const a = e.split(" ")[0], o = ce[a] ?? ue;
-  return /* @__PURE__ */ t(o, { ...r });
+  return /* @__PURE__ */ r(o, { ...t });
 }
 function de(e) {
   return e && e.__esModule && Object.prototype.hasOwnProperty.call(e, "default") ? e.default : e;
 }
-var g = { exports: {} };
-var M;
+var v = { exports: {} };
+var N;
 function fe() {
-  return M || (M = 1, (function(e) {
+  return N || (N = 1, (function(e) {
     (function() {
-      var r = {}.hasOwnProperty;
+      var t = {}.hasOwnProperty;
       function a() {
         for (var n = "", s = 0; s < arguments.length; s++) {
           var u = arguments[s];
@@ -101,7 +101,7 @@ function fe() {
           return n.toString();
         var s = "";
         for (var u in n)
-          r.call(n, u) && n[u] && (s = i(s, u));
+          t.call(n, u) && n[u] && (s = i(s, u));
         return s;
       }
       function i(n, s) {
@@ -109,19 +109,19 @@ function fe() {
       }
       e.exports ? (a.default = a, e.exports = a) : window.classNames = a;
     })();
-  })(g)), g.exports;
+  })(v)), v.exports;
 }
 var me = fe();
-const be = /* @__PURE__ */ de(me), w = be;
-function or({ children: e, className: r }) {
-  return /* @__PURE__ */ t("div", { className: w("container", r), children: e });
+const ge = /* @__PURE__ */ de(me), k = ge;
+function st({ children: e, className: t }) {
+  return /* @__PURE__ */ r("div", { className: k("container", t), children: e });
 }
-function ir() {
-  return /* @__PURE__ */ t("i", { className: "khlug-icon" });
+function it() {
+  return /* @__PURE__ */ r("i", { className: "khlug-icon" });
 }
 const m = 7;
-function ge(e, r, a) {
-  const o = Math.ceil(a / r), i = Math.floor(m / 2), n = [];
+function ve(e, t, a) {
+  const o = Math.ceil(a / t), i = Math.floor(m / 2), n = [];
   if (o === 0)
     return [1];
   if (o <= m)
@@ -137,27 +137,27 @@ function ge(e, r, a) {
       n.push(s);
   return n;
 }
-function lr({
+function lt({
   currentPage: e,
-  countPerPage: r,
+  countPerPage: t,
   totalCount: a,
   onPageChange: o
 }) {
-  const i = Math.ceil(a / r), n = ge(e, r, a);
+  const i = Math.ceil(a / t), n = ve(e, t, a);
   return /* @__PURE__ */ c(A, { justify: "center", align: "center", gap: 2, children: [
-    /* @__PURE__ */ t(
-      v,
+    /* @__PURE__ */ r(
+      h,
       {
         "aria-label": "이전 페이지",
         size: "sm",
         variant: "ghost",
         disabled: e === 1,
         onClick: () => o(Math.max(1, e - 1)),
-        children: /* @__PURE__ */ t(ne, { size: 14 })
+        children: /* @__PURE__ */ r(ne, { size: 14 })
       }
     ),
-    n.map((s) => /* @__PURE__ */ t(
-      y,
+    n.map((s) => /* @__PURE__ */ r(
+      M,
       {
         size: "sm",
         variant: s === e ? "solid" : "ghost",
@@ -167,39 +167,39 @@ function lr({
       },
       s
     )),
-    /* @__PURE__ */ t(
-      v,
+    /* @__PURE__ */ r(
+      h,
       {
         "aria-label": "다음 페이지",
         size: "sm",
         variant: "ghost",
         disabled: e === i,
         onClick: () => o(Math.min(i, e + 1)),
-        children: /* @__PURE__ */ t(te, { size: 14 })
+        children: /* @__PURE__ */ r(re, { size: 14 })
       }
     )
   ] });
 }
-function ve() {
-  return /* @__PURE__ */ t("div", { className: "ring-loading-indicator", children: /* @__PURE__ */ c("div", { className: "lds-dual-ring", children: [
-    /* @__PURE__ */ t("div", {}),
-    /* @__PURE__ */ t("div", {})
+function he() {
+  return /* @__PURE__ */ r("div", { className: "ring-loading-indicator", children: /* @__PURE__ */ c("div", { className: "lds-dual-ring", children: [
+    /* @__PURE__ */ r("div", {}),
+    /* @__PURE__ */ r("div", {})
   ] }) });
 }
-function cr({ className: e }) {
-  return /* @__PURE__ */ t("div", { className: w("center-ring-loading-indicator__wrapper", e), children: /* @__PURE__ */ t(ve, {}) });
+function ct({ className: e }) {
+  return /* @__PURE__ */ r("div", { className: k("center-ring-loading-indicator__wrapper", e), children: /* @__PURE__ */ r(he, {}) });
 }
-const p = ie.create({
+const b = ie.create({
   headers: {
     "Content-Type": "application/json"
   },
   withCredentials: !0
-}), he = async (e) => (await p.get("/users/@me/groups", {
+}), pe = async (e) => (await b.get("/users/@me/groups", {
   params: { isActive: e }
-})).data, pe = async () => (await p.get("/users/@me")).data, _e = {
-  getCurrentUser: pe,
-  getMyGroups: he
-}, k = () => oe({
+})).data, be = async () => (await b.get("/users/@me")).data, _e = {
+  getCurrentUser: be,
+  getMyGroups: pe
+}, D = () => se({
   queryKey: ["current-user"],
   queryFn: _e.getCurrentUser,
   staleTime: 30 * 1e3,
@@ -207,35 +207,35 @@ const p = ie.create({
   gcTime: 300 * 1e3,
   // 5분
   retry: 0
-}), Ne = () => {
-  const { status: e, data: r } = k();
+}), ye = () => {
+  const { status: e, data: t } = D();
   return {
-    isManager: r?.manager ?? !1,
+    isManager: t?.manager ?? !1,
     isLoading: e === "pending",
     isError: e === "error"
   };
-}, Me = "_navigationBar_ebbws_3", ye = "_navContainer_ebbws_23", Ce = "_logo_ebbws_41", we = "_desktopMenu_ebbws_51", ke = "_navItem_ebbws_63", De = "_navLink_ebbws_73", Ie = "_active_ebbws_99", xe = "_subNav_ebbws_109", Ae = "_mobileActions_ebbws_455", Le = "_mobileMenu_ebbws_469", Se = "_mobileNavItem_ebbws_497", Re = "_mobileNavLink_ebbws_513", Ee = "_mobileSubNav_ebbws_539", l = {
-  navigationBar: Me,
-  navContainer: ye,
+}, Ne = "_navigationBar_nt9ty_3", Me = "_navContainer_nt9ty_23", Ce = "_logo_nt9ty_41", ke = "_desktopMenu_nt9ty_51", De = "_navItem_nt9ty_63", xe = "_navLink_nt9ty_73", Ie = "_active_nt9ty_99", Le = "_subNav_nt9ty_107", Ae = "_mobileActions_nt9ty_461", we = "_mobileMenu_nt9ty_475", Se = "_mobileNavItem_nt9ty_503", Re = "_mobileNavLink_nt9ty_519", Ee = "_mobileSubNav_nt9ty_545", l = {
+  navigationBar: Ne,
+  navContainer: Me,
   logo: Ce,
-  desktopMenu: we,
-  navItem: ke,
-  navLink: De,
+  desktopMenu: ke,
+  navItem: De,
+  navLink: xe,
   active: Ie,
-  subNav: xe,
+  subNav: Le,
   mobileActions: Ae,
-  mobileMenu: Le,
+  mobileMenu: we,
   mobileNavItem: Se,
   mobileNavLink: Re,
   mobileSubNav: Ee
 };
-function Te({ item: e }) {
-  return e.isDivider ? /* @__PURE__ */ t("hr", {}) : /* @__PURE__ */ t("a", { href: e.href, children: e.label });
+function Te({ item: e, isCurrent: t }) {
+  return e.isDivider ? /* @__PURE__ */ r("hr", {}) : /* @__PURE__ */ r("a", { href: e.href, className: t ? l.active : "", children: e.label });
 }
-function Ye({ item: e, current: r }) {
-  const a = r !== void 0 ? e.href === r : !1;
+function Ye({ item: e, current: t }) {
+  const a = t !== void 0 ? e.subItems.some((o) => o.href === t) || e.href === t : !1;
   return /* @__PURE__ */ c("div", { className: l.navItem, children: [
-    /* @__PURE__ */ t(
+    /* @__PURE__ */ r(
       "a",
       {
         href: e.href,
@@ -243,88 +243,80 @@ function Ye({ item: e, current: r }) {
         children: e.label
       }
     ),
-    /* @__PURE__ */ t("div", { className: l.subNav, children: e.subItems.map((o, i) => /* @__PURE__ */ t(Te, { item: o }, o.href || i)) })
+    /* @__PURE__ */ r("div", { className: l.subNav, children: e.subItems.map((o, i) => /* @__PURE__ */ r(Te, { item: o, isCurrent: o.href === t }, o.href || i)) })
   ] });
 }
-function Ge({ menuItems: e, isLoggedIn: r, isManager: a, current: o }) {
-  const i = e.filter((n) => n.requiresManager ? a : n.requiresMember ? r : n.forGuest ? !r : !0);
-  return /* @__PURE__ */ t(I, { children: i.map((n) => /* @__PURE__ */ t(Ye, { item: n, current: o }, n.label)) });
+function Ge({ menuItems: e, isLoggedIn: t, isManager: a, current: o }) {
+  const i = e.filter((n) => n.requiresManager ? a : n.requiresMember ? t : n.forGuest ? !t : !0);
+  return /* @__PURE__ */ r(I, { children: i.map((n) => /* @__PURE__ */ r(Ye, { item: n, current: o }, n.label)) });
 }
-function Be({ item: e }) {
-  return e.isDivider ? /* @__PURE__ */ t("hr", {}) : /* @__PURE__ */ t("a", { href: e.href, children: e.label });
+function Be({ item: e, isCurrent: t }) {
+  return e.isDivider ? /* @__PURE__ */ r("hr", {}) : /* @__PURE__ */ r("a", { href: e.href, className: t ? l.active : "", children: e.label });
 }
-function Oe({ item: e, current: r }) {
-  const a = r !== void 0 ? e.href === r : !1;
+function Oe({ item: e, current: t }) {
   return /* @__PURE__ */ c("div", { className: l.mobileNavItem, children: [
-    /* @__PURE__ */ t(
-      "a",
-      {
-        href: e.href,
-        className: `${l.mobileNavLink} ${a ? l.active : ""}`,
-        children: e.label
-      }
-    ),
-    /* @__PURE__ */ t("div", { className: l.mobileSubNav, children: e.subItems.map((o, i) => /* @__PURE__ */ t(Be, { item: o }, o.href || i)) })
+    /* @__PURE__ */ r("a", { href: e.href, className: l.mobileNavLink, children: e.label }),
+    /* @__PURE__ */ r("div", { className: l.mobileSubNav, children: e.subItems.map((a, o) => /* @__PURE__ */ r(Be, { item: a, isCurrent: a.href === t }, a.href || o)) })
   ] });
 }
-function Ue({ menuItems: e, isLoggedIn: r, isManager: a, current: o }) {
-  const i = e.filter((n) => n.requiresManager ? a : n.requiresMember ? r : n.forGuest ? !r : !0);
-  return /* @__PURE__ */ t("div", { className: l.mobileMenu, children: i.map((n) => /* @__PURE__ */ t(Oe, { item: n, current: o }, n.label)) });
+function Ue({ menuItems: e, isLoggedIn: t, isManager: a, current: o }) {
+  const i = e.filter((n) => n.requiresManager ? a : n.requiresMember ? t : n.forGuest ? !t : !0);
+  return /* @__PURE__ */ r("div", { className: l.mobileMenu, children: i.map((n) => /* @__PURE__ */ r(Oe, { item: n, current: o }, n.label)) });
 }
-const Fe = "https://cdn.khlug.org/images/khlug-long-logo.png", $e = "https://app.khlug.org";
-function He({
+const Fe = "https://cdn.khlug.org/images/khlug-long-logo.png", He = "https://app.khlug.org";
+function je({
   notificationSlot: e,
-  logoUrl: r = Fe,
-  logoHref: a = $e,
+  logoUrl: t = Fe,
+  logoHref: a = He,
   menuItems: o = [],
   current: i
 }) {
-  const [n, s] = se(!1), { data: u } = k(), _ = !!u?.id, { isManager: N } = Ne(), D = () => {
+  const [n, s] = oe(!1), { data: u } = D(), _ = !!u?.id, { isManager: y } = ye(), x = () => {
     s(!n);
   };
   return /* @__PURE__ */ c("nav", { className: l.navigationBar, children: [
     /* @__PURE__ */ c("div", { className: l.navContainer, children: [
-      /* @__PURE__ */ t("a", { href: a, children: /* @__PURE__ */ t(
+      /* @__PURE__ */ r("a", { href: a, children: /* @__PURE__ */ r(
         "img",
         {
-          src: r,
+          src: t,
           alt: "KHLUG Logo",
           className: l.logo
         }
       ) }),
       /* @__PURE__ */ c("div", { className: l.desktopMenu, children: [
-        /* @__PURE__ */ t(Ge, { menuItems: o, isLoggedIn: _, isManager: N, current: i }),
+        /* @__PURE__ */ r(Ge, { menuItems: o, isLoggedIn: _, isManager: y, current: i }),
         e
       ] }),
       /* @__PURE__ */ c("div", { className: l.mobileActions, children: [
         e,
-        /* @__PURE__ */ t(
-          v,
+        /* @__PURE__ */ r(
+          h,
           {
             "aria-label": "메뉴",
-            onClick: D,
+            onClick: x,
             variant: "ghost",
             size: "sm",
-            children: /* @__PURE__ */ t(ae, { size: 24 })
+            children: /* @__PURE__ */ r(ae, { size: 24 })
           }
         )
       ] })
     ] }),
-    n && /* @__PURE__ */ t(Ue, { menuItems: o, isLoggedIn: _, isManager: N, current: i })
+    n && /* @__PURE__ */ r(Ue, { menuItems: o, isLoggedIn: _, isManager: y, current: i })
   ] });
 }
-function ur({ children: e, logoUrl: r, logoHref: a, menuItems: o, current: i }) {
+function ut({ children: e, logoUrl: t, logoHref: a, menuItems: o, current: i }) {
   return /* @__PURE__ */ c("div", { className: "main-layout", children: [
-    /* @__PURE__ */ t(He, { logoUrl: r, logoHref: a, menuItems: o, current: i }),
-    /* @__PURE__ */ t("div", { className: "main-layout__content", children: e })
+    /* @__PURE__ */ r(je, { logoUrl: t, logoHref: a, menuItems: o, current: i }),
+    /* @__PURE__ */ r("div", { className: "main-layout__content", children: e })
   ] });
 }
-const je = {
+const $e = {
   "logo-header": "_logo-header_v24wn_1"
 };
-function dr({ children: e }) {
+function dt({ children: e }) {
   return /* @__PURE__ */ c("div", { children: [
-    /* @__PURE__ */ t("header", { className: je["logo-header"], children: /* @__PURE__ */ t(
+    /* @__PURE__ */ r("header", { className: $e["logo-header"], children: /* @__PURE__ */ r(
       "img",
       {
         src: "https://cdn.khlug.org/images/khlug-long-logo.png",
@@ -334,12 +326,12 @@ function dr({ children: e }) {
     e
   ] });
 }
-const ze = async (e) => (await p.get(
+const ze = async (e) => (await b.get(
   `/groups/${e}/members`
-)).data, fr = {
+)).data, ft = {
   getGroupMembers: ze
 };
-function mr(e) {
+function mt(e) {
   return `₩${e.toLocaleString("ko-KR")}`;
 }
 const qe = {
@@ -349,11 +341,11 @@ const qe = {
   DATETIME: "YYYY-MM-DD HH:mm:ss",
   DATETIME_KOR: "YYYY년 M월 D일 H시 m분 s초"
 };
-function br(e, r = qe.DATETIME) {
-  return h(e).format(r);
+function gt(e, t = qe.DATETIME) {
+  return p(e).format(t);
 }
-function gr(e, r = /* @__PURE__ */ new Date()) {
-  const a = h(e).diff(h(r), "day");
+function vt(e, t = /* @__PURE__ */ new Date()) {
+  const a = p(e).diff(p(t), "day");
   if (a === 0)
     return "오늘";
   if (a > 0)
@@ -379,25 +371,25 @@ function gr(e, r = /* @__PURE__ */ new Date()) {
         return `${-a}일 전`;
     }
 }
-function vr(e) {
+function ht(e) {
   return le(e) ? e.response?.data?.message ?? e.message : e.message;
 }
-const hr = (e) => e && new DOMParser().parseFromString(e, "text/html").body.textContent || "";
-class pr {
-  static validateUserName(r) {
-    return r.length === 0 || r.length > 50 ? {
+const pt = (e) => e && new DOMParser().parseFromString(e, "text/html").body.textContent || "";
+class bt {
+  static validateUserName(t) {
+    return t.length === 0 || t.length > 50 ? {
       result: !1,
       message: "이름은 1자 이상 50자 이하로 입력해주세요."
-    } : /^[가-힣a-zA-Z ]+$/.test(r) ? { result: !0 } : {
+    } : /^[가-힣a-zA-Z ]+$/.test(t) ? { result: !0 } : {
       result: !1,
       message: "이름은 한글, 영문, 공백만 입력 가능합니다."
     };
   }
-  static validateGrade(r) {
-    return Number.isNaN(r) ? {
+  static validateGrade(t) {
+    return Number.isNaN(t) ? {
       result: !1,
       message: "학년은 숫자로 입력해주세요."
-    } : r < 1 || r > 10 ? {
+    } : t < 1 || t > 10 ? {
       result: !1,
       message: "학년은 1 이상 4 이하로 입력해주세요."
     } : { result: !0 };
@@ -470,7 +462,7 @@ const Ke = C({
       color: "brand.600"
     }
   }
-}), Pe = L({
+}), Pe = w({
   globalCss: {
     body: {
       bg: "#fcfcfc",
@@ -501,32 +493,32 @@ const Ke = C({
       link: Ve
     }
   }
-}), _r = S(R, Pe);
+}), _t = S(R, Pe);
 export {
-  nr as BaseModal,
-  tr as Button,
-  ar as Callout,
-  cr as CenterRingLoadingIndicator,
-  sr as CollegeIcon,
-  or as Container,
+  nt as BaseModal,
+  rt as Button,
+  at as Callout,
+  ct as CenterRingLoadingIndicator,
+  ot as CollegeIcon,
+  st as Container,
   qe as DateFormats,
-  fr as GroupMemberApi,
-  ir as KhlugIcon,
-  ur as MainLayout,
-  He as NavigationBar,
-  lr as PageNavigator,
-  ve as RingLoadingIndicator,
-  dr as SimpleLogoLayout,
+  ft as GroupMemberApi,
+  it as KhlugIcon,
+  ut as MainLayout,
+  je as NavigationBar,
+  lt as PageNavigator,
+  he as RingLoadingIndicator,
+  dt as SimpleLogoLayout,
   _e as UserPublicApi,
-  pr as Validator,
-  p as apiClient,
-  gr as calcDateInterval,
-  w as cn,
-  vr as extractErrorMessage,
-  mr as formatCurrency,
-  br as formatDate,
-  hr as stripHtmlTags,
-  _r as system,
-  k as useCurrentUser,
-  Ne as useIsManager
+  bt as Validator,
+  b as apiClient,
+  vt as calcDateInterval,
+  k as cn,
+  ht as extractErrorMessage,
+  mt as formatCurrency,
+  gt as formatDate,
+  pt as stripHtmlTags,
+  _t as system,
+  D as useCurrentUser,
+  ye as useIsManager
 };
