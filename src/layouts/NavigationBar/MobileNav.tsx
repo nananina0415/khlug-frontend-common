@@ -16,7 +16,7 @@ function MobileSubNavItem({ item }: { item: SubMenuItem }) {
 }
 
 function MobileNavItem({ item, current }: { item: MenuItem; current?: string }) {
-  const isActive = current !== undefined ? item.label === current : false;
+  const isActive = current !== undefined ? item.href === current : false;
 
   return (
     <div className={styles.mobileNavItem}>

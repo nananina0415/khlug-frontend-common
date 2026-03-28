@@ -16,7 +16,7 @@ function SubNavItem({ item }: { item: SubMenuItem }) {
 }
 
 function NavItem({ item, current }: { item: MenuItem; current?: string }) {
-  const isActive = current !== undefined ? item.label === current : false;
+  const isActive = current !== undefined ? item.href === current : false;
 
   return (
     <div className={styles.navItem}>

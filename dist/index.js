@@ -4,7 +4,7 @@ import { GraduationCap as E, Coffee as T, Hospital as f, PieChart as Y, Plane as
 import { useState as oe } from "react";
 import { useQuery as se } from "@tanstack/react-query";
 import ie, { isAxiosError as le } from "axios";
-import p from "dayjs";
+import h from "dayjs";
 function nr({ isOpen: e, onRequestClose: r, children: a }) {
   return /* @__PURE__ */ t(
     d.Root,
@@ -189,16 +189,16 @@ function be() {
 function cr({ className: e }) {
   return /* @__PURE__ */ t("div", { className: w("center-ring-loading-indicator__wrapper", e), children: /* @__PURE__ */ t(be, {}) });
 }
-const h = ie.create({
+const p = ie.create({
   headers: {
     "Content-Type": "application/json"
   },
   withCredentials: !0
-}), pe = async (e) => (await h.get("/users/@me/groups", {
+}), he = async (e) => (await p.get("/users/@me/groups", {
   params: { isActive: e }
-})).data, he = async () => (await h.get("/users/@me")).data, _e = {
-  getCurrentUser: he,
-  getMyGroups: pe
+})).data, pe = async () => (await p.get("/users/@me")).data, _e = {
+  getCurrentUser: pe,
+  getMyGroups: he
 }, k = () => se({
   queryKey: ["current-user"],
   queryFn: _e.getCurrentUser,
@@ -233,7 +233,7 @@ function Te({ item: e }) {
   return e.isDivider ? /* @__PURE__ */ t("hr", {}) : /* @__PURE__ */ t("a", { href: e.href, children: e.label });
 }
 function Ye({ item: e, current: r }) {
-  const a = r !== void 0 ? e.label === r : !1;
+  const a = r !== void 0 ? e.href === r : !1;
   return /* @__PURE__ */ c("div", { className: l.navItem, children: [
     /* @__PURE__ */ t(
       "a",
@@ -254,7 +254,7 @@ function Be({ item: e }) {
   return e.isDivider ? /* @__PURE__ */ t("hr", {}) : /* @__PURE__ */ t("a", { href: e.href, children: e.label });
 }
 function Oe({ item: e, current: r }) {
-  const a = r !== void 0 ? e.label === r : !1;
+  const a = r !== void 0 ? e.href === r : !1;
   return /* @__PURE__ */ c("div", { className: l.mobileNavItem, children: [
     /* @__PURE__ */ t(
       "a",
@@ -334,7 +334,7 @@ function dr({ children: e }) {
     e
   ] });
 }
-const ze = async (e) => (await h.get(
+const ze = async (e) => (await p.get(
   `/groups/${e}/members`
 )).data, fr = {
   getGroupMembers: ze
@@ -350,10 +350,10 @@ const qe = {
   DATETIME_KOR: "YYYY년 M월 D일 H시 m분 s초"
 };
 function gr(e, r = qe.DATETIME) {
-  return p(e).format(r);
+  return h(e).format(r);
 }
 function vr(e, r = /* @__PURE__ */ new Date()) {
-  const a = p(e).diff(p(r), "day");
+  const a = h(e).diff(h(r), "day");
   if (a === 0)
     return "오늘";
   if (a > 0)
@@ -382,8 +382,8 @@ function vr(e, r = /* @__PURE__ */ new Date()) {
 function br(e) {
   return le(e) ? e.response?.data?.message ?? e.message : e.message;
 }
-const pr = (e) => e && new DOMParser().parseFromString(e, "text/html").body.textContent || "";
-class hr {
+const hr = (e) => e && new DOMParser().parseFromString(e, "text/html").body.textContent || "";
+class pr {
   static validateUserName(r) {
     return r.length === 0 || r.length > 50 ? {
       result: !1,
@@ -518,14 +518,14 @@ export {
   be as RingLoadingIndicator,
   dr as SimpleLogoLayout,
   _e as UserPublicApi,
-  hr as Validator,
-  h as apiClient,
+  pr as Validator,
+  p as apiClient,
   vr as calcDateInterval,
   w as cn,
   br as extractErrorMessage,
   mr as formatCurrency,
   gr as formatDate,
-  pr as stripHtmlTags,
+  hr as stripHtmlTags,
   _r as system,
   k as useCurrentUser,
   Ne as useIsManager
