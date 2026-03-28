@@ -49,6 +49,7 @@
 
 .navLink.active {
   color: var(--main-color);
+  border-bottom: 2px solid var(--main-color);
 }
 
 .subNav {
@@ -263,7 +264,7 @@
 }
 
 .mobileNavLink.active {
-  color: #5dc4ff;
+  border-bottom: 2px solid var(--main-color);
 }
 
 .mobileSubNav a {
