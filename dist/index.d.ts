@@ -70,7 +70,7 @@ export declare const GroupMemberApi: {
 
 export declare function KhlugIcon(): JSX_2.Element;
 
-export declare function MainLayout({ children, logoUrl, logoHref, menuItems }: Props_8): JSX_2.Element;
+export declare function MainLayout({ children, logoUrl, logoHref, menuItems, current }: Props_8): JSX_2.Element;
 
 export declare type MenuItem = {
     label: string;
@@ -81,7 +81,7 @@ export declare type MenuItem = {
     forGuest?: boolean;
 };
 
-export declare function NavigationBar({ notificationSlot, logoUrl, logoHref, menuItems, }: Props_9): JSX_2.Element;
+export declare function NavigationBar({ notificationSlot, logoUrl, logoHref, menuItems, current, }: Props_9): JSX_2.Element;
 
 export declare function PageNavigator({ currentPage, countPerPage, totalCount, onPageChange, }: Props_6): JSX_2.Element;
 
@@ -131,6 +131,7 @@ declare type Props_8 = {
     logoUrl?: string;
     logoHref?: string;
     menuItems?: MenuItem[];
+    current?: string;
 };
 
 declare type Props_9 = {
@@ -138,6 +139,7 @@ declare type Props_9 = {
     logoUrl?: string;
     logoHref?: string;
     menuItems?: MenuItem[];
+    current?: string;
 };
 
 export declare type PropsOf<T extends React.ComponentType<any>> = T extends React.ComponentType<infer P> ? P : never;

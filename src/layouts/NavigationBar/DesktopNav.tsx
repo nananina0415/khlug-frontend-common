@@ -5,6 +5,7 @@ type Props = {
   menuItems: MenuItem[];
   isLoggedIn: boolean;
   isManager: boolean;
+  current?: string;
 };
 
 function SubNavItem({ item }: { item: SubMenuItem }) {
@@ -14,8 +15,8 @@ function SubNavItem({ item }: { item: SubMenuItem }) {
   return <a href={item.href}>{item.label}</a>;
 }
 
-function NavItem({ item }: { item: MenuItem }) {
-  const isActive = item.requiresManager;
+function NavItem({ item, current }: { item: MenuItem; current?: string }) {
+  const isActive = current !== undefined ? item.label === current : false;
 
   return (
     <div className={styles.navItem}>
@@ -34,7 +35,7 @@ function NavItem({ item }: { item: MenuItem }) {
   );
 }
 
-export function DesktopNav({ menuItems, isLoggedIn, isManager }: Props) {
+export function DesktopNav({ menuItems, isLoggedIn, isManager, current }: Props) {
   const visibleItems = menuItems.filter((item) => {
     // requiresManager: 매니저에게만 표시
     if (item.requiresManager) return isManager;
@@ -49,7 +50,7 @@ export function DesktopNav({ menuItems, isLoggedIn, isManager }: Props) {
   return (
     <>
       {visibleItems.map((item) => (
-        <NavItem key={item.label} item={item} />
+        <NavItem key={item.label} item={item} current={current} />
       ))}
     </>
   );

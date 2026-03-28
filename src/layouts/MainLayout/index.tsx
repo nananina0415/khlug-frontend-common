@@ -7,12 +7,13 @@ type Props = {
   logoUrl?: string;
   logoHref?: string;
   menuItems?: MenuItem[];
+  current?: string;
 };
 
-export default function MainLayout({ children, logoUrl, logoHref, menuItems }: Props) {
+export default function MainLayout({ children, logoUrl, logoHref, menuItems, current }: Props) {
   return (
     <div className="main-layout">
-      <NavigationBar logoUrl={logoUrl} logoHref={logoHref} menuItems={menuItems} />
+      <NavigationBar logoUrl={logoUrl} logoHref={logoHref} menuItems={menuItems} current={current} />
       <div className="main-layout__content">{children}</div>
     </div>
   );

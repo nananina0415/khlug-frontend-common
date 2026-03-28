@@ -16,6 +16,7 @@ type Props = {
   logoUrl?: string;
   logoHref?: string;
   menuItems?: MenuItem[];
+  current?: string;
 };
 
 export default function NavigationBar({
@@ -23,6 +24,7 @@ export default function NavigationBar({
   logoUrl = DEFAULT_LOGO_URL,
   logoHref = DEFAULT_LOGO_HREF,
   menuItems = [],
+  current,
 }: Props) {
   const [menuVisible, setMenuVisible] = useState(false);
   const { data: currentUser } = useCurrentUser();
@@ -45,7 +47,7 @@ export default function NavigationBar({
         </a>
 
         <div className={styles.desktopMenu}>
-          <DesktopNav menuItems={menuItems} isLoggedIn={isLoggedIn} isManager={isManager} />
+          <DesktopNav menuItems={menuItems} isLoggedIn={isLoggedIn} isManager={isManager} current={current} />
           {notificationSlot}
         </div>
 
@@ -63,7 +65,7 @@ export default function NavigationBar({
       </div>
 
       {menuVisible && (
-        <MobileNav menuItems={menuItems} isLoggedIn={isLoggedIn} isManager={isManager} />
+        <MobileNav menuItems={menuItems} isLoggedIn={isLoggedIn} isManager={isManager} current={current} />
       )}
     </nav>
   );

@@ -5,6 +5,7 @@ type Props = {
   menuItems: MenuItem[];
   isLoggedIn: boolean;
   isManager: boolean;
+  current?: string;
 };
 
 function MobileSubNavItem({ item }: { item: SubMenuItem }) {
@@ -14,8 +15,8 @@ function MobileSubNavItem({ item }: { item: SubMenuItem }) {
   return <a href={item.href}>{item.label}</a>;
 }
 
-function MobileNavItem({ item }: { item: MenuItem }) {
-  const isActive = item.requiresManager;
+function MobileNavItem({ item, current }: { item: MenuItem; current?: string }) {
+  const isActive = current !== undefined ? item.label === current : false;
 
   return (
     <div className={styles.mobileNavItem}>
@@ -34,7 +35,7 @@ function MobileNavItem({ item }: { item: MenuItem }) {
   );
 }
 
-export function MobileNav({ menuItems, isLoggedIn, isManager }: Props) {
+export function MobileNav({ menuItems, isLoggedIn, isManager, current }: Props) {
   const visibleItems = menuItems.filter((item) => {
     // requiresManager: 매니저에게만 표시
     if (item.requiresManager) return isManager;
@@ -49,7 +50,7 @@ export function MobileNav({ menuItems, isLoggedIn, isManager }: Props) {
   return (
     <div className={styles.mobileMenu}>
       {visibleItems.map((item) => (
-        <MobileNavItem key={item.label} item={item} />
+        <MobileNavItem key={item.label} item={item} current={current} />
       ))}
     </div>
   );
