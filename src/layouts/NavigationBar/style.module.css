@@ -271,7 +271,7 @@
 }
 
 .mobileSubNav a.active {
-  color: #5dc4ff;
+  text-decoration: underline;
 }
 
 .mobileSubNav a {
