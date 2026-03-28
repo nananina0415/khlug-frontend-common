@@ -1,3 +1,4 @@
+import { Strong } from "@chakra-ui/react";
 import { type MenuItem, type SubMenuItem } from "./menuData";
 import styles from "./style.module.css";
 
@@ -19,7 +20,7 @@ function MobileNavItem({ item, current }: { item: MenuItem; current?: string }) 
   return (
     <div className={styles.mobileNavItem}>
       <a href={item.href} className={styles.mobileNavLink}>
-        {item.label}
+        <Strong>{item.label}</Strong>
       </a>
       <div className={styles.mobileSubNav}>
         {item.subItems.map((subItem, index) => (

@@ -271,7 +271,11 @@
 }
 
 .mobileSubNav a.active {
-  text-decoration: underline;
+  color: #80d4ff;
+}
+
+.mobileSubNav a.active:hover {
+  color: #4dc2ff;
 }
 
 .mobileSubNav a {
