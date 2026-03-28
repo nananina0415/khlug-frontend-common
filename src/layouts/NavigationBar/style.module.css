@@ -274,10 +274,6 @@
   color: #80d4ff;
 }
 
-.mobileSubNav a.active:hover {
-  color: #4dc2ff;
-}
-
 .mobileSubNav a {
   display: block;
   padding: 6px 12px;
